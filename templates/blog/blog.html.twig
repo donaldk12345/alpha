@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bonjour !{% endblock %}
+
+{% block body %}
+ <div class="container mt-3">
+ <h1>Mon blog  </h1>
+</div><br>
+<div class="container">
+<div class="row">
+<div class="card" style="width: 18rem;">
+  <img src=" {{ asset('images/b.jpg') }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title bg-light">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <img src=" {{ asset('images/a.jpg') }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title bg-light">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <img src=" {{ asset('images/d.jpg') }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title bg-light">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <img src=" {{ asset('images/d.jpg') }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title bg-light">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <img src=" {{ asset('images/a.jpg') }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title bg-light">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <img src=" {{ asset('images/b.jpg') }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title bg-light">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+</div>
+<div>
+
+
+</div><br>
+ <style>
+ .container h1{
+    font-family:bold;
+    letter-spacing:2px;
+}
+.container .row .card{
+    box-shadow: 0 0 10px rgb(0,0,0,0.3) !important;
+}
+
+</style>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+ {% extends "base.html.twig" %}
+ {% block body %}
+ <div class="container">
+ <h1 class="mt-5"> Inscription sur le site </h1>
+ </div>
+ <div class="container mt-4">
+ {{ form_start(form) }}
+ <div class="form-group">
+ <div class="col-md-6">
+ {{ form_widget(form) }}
+ </div>
+ </div>
+ 
+ <button type="submit" class="btn btn-success mt-4">Inscription</button>
+ {{ form_end(form) }}
+ </div>
+ <style>
+ .container h1{
+    font-family:bold;
+    letter-spacing:0.1px;
+    color:#0D7C99;
+
+}
+.btn{
+    background-color:#0D7C99!important;
+    border-color:#0D7C99!important;
+}
+body{
+   background-color:#fff !important;
+
+}
+
+.form-control{
+
+}
+</style>
+ {% endblock %}

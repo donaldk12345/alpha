@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+        {% block stylesheets %}
+            {#{{ encore_entry_link_tags('app') }}#}
+ <link href="css/bootstrap.min.css" rel="stylesheet">
+ <link href="css/main.css" rel="stylesheet">
+ <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        {% endblock %}
+
+        {% block javascripts %}
+            {#{{ encore_entry_script_tags('app') }}#}
+            
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+        {% endblock %}
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+  <div class="container-fluid">
+    <a class="navbar-brand disabled" href="#"><img src=" {{ asset('images/logo_ynod.png') }}" style="height:30%;width:30%; border-radius:5px; "></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse  collapse justify-content-between" id="navbarNavDropdown">
+      <ul class="navbar-nav mr-auto">
+      {% if app.user %}
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href=" {{path('home')}} ">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href=" {{path('services')}}">Services</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href=" {{path('blog')}}">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href=" {{path('apropos')}}">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href=" {{path('contact')}}">Contact</a>
+        </li>
+        {% endif %}
+      </ul>
+      <ul class="navbar-nav">
+      {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+      <li class="nav-item">
+          <a class="nav-link disabled" href="#"><i class="fas fa-user"></i>{{app.user.email}}</a>
+        </li>
+      {% endif %}
+
+      {% if not app.user %}
+        <li class="nav-item">
+          <a class="nav-link" href="{{path('security_login')}}"><i class="fas fa-sign-in-alt"></i>Connexion</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{path('security_registration')}}"><i class="fas fa-users"></i>Inscription</a>
+        </li>
+      {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{{path('security_logout')}}"><i class="fas fa-power-off"></i>Deconnexion</a>
+        </li>
+      {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
+        {% block body %}
+  
+        
+        {% endblock %}
+
+     {% if app.user %}
+    <footer class="footer-48201 mt-5">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 pr-md-5">
+            <a href="#" class="footer-site-logo d-block mb-4">Colorlib</a>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quasi perferendis ratione perspiciatis accusantium.</p>
+          </div>
+          <div class="col-md">
+            <ul class="list-unstyled nav-links">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md">
+            <ul class="list-unstyled nav-links">
+              <li><a href="#">Clients</a></li>
+              <li><a href="#">Testimonials</a></li>
+              <li><a href="#">Journal</a></li>
+            </ul>
+          </div>
+          <div class="col-md">
+            <ul class="list-unstyled nav-links">
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms &amp; Conditions</a></li>
+              <li><a href="#">Partners</a></li>
+            </ul>
+          </div>
+          <div class="col-md text-md-center">
+            <ul class="social list-unstyled">
+              <li><a href="#"><iclass="fas fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fas fa-wats-app"></i></a></li>
+              <li><a href="#"><span class="fas fa-youtube"></span></a></li>
+              <li><a href="#"><span class="fas fa-email"></span></a></li>
+            </ul>
+            <p class=""><a href="#" class="btn btn-tertiary">Contact Us</a></p>
+          </div>
+        </div> 
+
+        <div class="row ">
+          <div class="col-12 text-center">
+            <div class="copyright mt-5 pt-5">
+              <p><small>&copy; 2019-2020 All Rights Reserved.</small></p>
+            </div>
+          </div>
+        </div> 
+      </div>
+      
+    </footer>
+{% endif %}
+
+    </body>
+</html>
